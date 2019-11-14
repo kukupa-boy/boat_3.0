@@ -1,0 +1,120 @@
+@fontColor:rgb(89,252,255);
+@bgColor:rgb(5, 33, 69);
+@lightColor:rgba(89, 252, 255, 0.3);
+.censorNoteBox {
+    position: absolute;
+    background-color: @bgColor;
+    background-image: url(../../public/img/border.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 78%;
+    width: 82%;
+    top: 11%;
+    right: 4%;
+    box-sizing: border-box;
+    overflow: hidden;
+    >.cnb-left,.cnb-right{
+        height: 100%;
+        position: absolute;
+        box-sizing: border-box;
+    }
+    >.cnb-left{
+        left: 0;
+        width: 78.9%;
+        border: 4px solid rgba(255, 255, 255, 0);
+    }
+    >.cnb-right{
+        right: 0;
+        width: 21.1%;
+    }
+}
+
+.cnb-right{
+    >div{
+        position: relative;
+        width: 100%;
+        height: 50%;
+        box-sizing: border-box;
+        >p{
+            color: @fontColor;
+            padding-top: 24px;
+            box-sizing: border-box;
+            border-left: 16px solid rgba(255, 255, 255, 0);
+            border-right: 16px solid rgba(255, 255, 255, 0);
+            border-bottom: 1px dashed @lightColor;           >span{
+                margin-left: 16px;
+            }
+        }
+    }
+}
+
+.thehead{
+    height: 60px;
+    position: relative;
+    line-height: 60px;
+    >.th-search{
+        display: inline-block;
+        margin-left: 30px;
+        width: 320px;
+    }
+}
+
+.thebody{
+    width: 100%;
+    button{
+        margin: 0;
+    }
+    i{
+        display: inline-block;
+        border-radius: 10px;
+        width: 20px;
+        height: 20px;
+        margin-left: -1px;
+        vertical-align: middle;
+        font-size: 16px;
+        text-align: center;
+        color: @fontColor;
+        transition: 0.3s;
+        line-height: 20px;
+        &:hover{
+            color: rgb(173, 72, 72);
+        }
+    }
+    // >.tableLabel{
+    //     height: 30px;
+    //     border-bottom: 1px solid #ccc;
+    //     >span{
+    //         display: inline-block;
+    //         height: 100%;;
+    //         line-height: 30px;
+    //         margin-left: 30px;
+    //         font-size: 18px;
+    //         border-bottom: 10px solid rgb(87, 103, 252);
+    //     }
+    // }
+}
+
+.thefoot{
+    position: absolute;
+    bottom: 16px;
+    right: 60px;
+}
+
+.oprate{
+    >span{
+        display: inline-block;
+        border-radius: 10px;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        border: 2px solid #ccc;
+        font-size: 18px;
+        text-align: center;
+        color: #aaa;
+        line-height: 20px;
+    }
+    >.fa-times{
+        border: 2px solid orange;
+        color: orange;
+    }
+}

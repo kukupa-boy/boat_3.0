@@ -1,0 +1,287 @@
+
+@fontColor:rgb(89,252,255);
+@bgColor:rgb(5, 33, 69);
+@lightColor:rgba(89, 252, 255, 0.3);
+@halfColor:rgba(89, 252, 255, 0.6);
+@hideColor:rgba(255,255,255,0);
+.personRootBox {
+    position: absolute;
+    background-color: @bgColor;
+    background-image: url(../../person_system/image/image_l/bgRoot.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 78%;
+    width: 82%;
+    top: 11%;
+    right: 4%;
+    box-sizing: border-box;
+    overflow: hidden;
+    >.prb-left,.prb-right{
+        height: 100%;
+        position: absolute;
+        box-sizing: border-box;
+    }
+    >.prb-left{
+        left: 0;
+        width: 29.6%;
+        border: 4px solid rgba(255, 255, 255, 0);
+        // background-color: rgba(93, 95, 214, 0.1);
+    }
+    >.prb-right{
+        right: 0;
+        width: 70.4%;
+    }
+}
+
+
+.prb-left{
+    color: @fontColor;
+    >.title{
+        height: 28px;
+        >span{
+            display: inline-block;
+            height: 28px;
+            line-height: 28px;
+            padding: 0 60px 0 12px;
+            background:url('../../person_system/image/image_l/boxHead.png') right 0 no-repeat;
+            // person_system/image/image_l/boxHead.png
+            border-bottom: 2px solid #fff;
+            border-image: -webkit-linear-gradient(to right,@fontColor,@fontColor,@fontColor,@hideColor,@hideColor) 30 30;
+            border-image: -moz-linear-gradient(to right,@fontColor,@fontColor,@fontColor,@hideColor,@hideColor) 30 30;
+            border-image: linear-gradient(to right,@fontColor,@fontColor,@fontColor,@hideColor,@hideColor) 30 30;
+        }
+    }
+    >.head{
+        height: 46px;
+        line-height: 46px;
+            text-align: center;
+        >*{
+            display: inline-block;
+        }
+        >.menu{
+            height: 36px;
+            margin-right: 8px;
+            border-bottom: 2px solid #fff;
+            border-image: -webkit-linear-gradient(to right,@hideColor 20%,@halfColor,@hideColor 80%) 30 30;
+            border-image: -moz-linear-gradient(to right,@hideColor 20%,@halfColor,@hideColor 80%) 30 30;
+            border-image: linear-gradient(to right,@hideColor 20%,@halfColor,@hideColor 80%) 30 30;
+            >span{
+                margin: 0 12px;
+                line-height: 46px;
+                cursor: pointer;
+                display: inline-block;
+                height: 100%;
+            }
+            >.checked{
+                border-bottom: 2px solid @fontColor;
+            }
+        }
+        >.search{
+            width: 160px;
+        }
+    }
+    >.body{
+        .addScroll;
+        box-sizing: border-box;
+        padding: 24px;
+        height: calc(100% - 100px);
+        overflow-y: scroll;
+        margin: 16px 0;
+        // background-color: yellow;
+    }
+}
+.prb-right{
+    right: 0;
+    width: 70.4%;
+    >.head{
+        // background-color: rgb(146, 146, 221);
+        height: 10%;
+        margin-top: 2px;
+        line-height: 36px;
+        >.select-all{
+            color: @fontColor;
+            position: absolute;
+            box-shadow: 0 2px 4px 0 @halfColor;
+            height: 10%;
+            width: 90%;
+            left: 5%;
+            font-size: 16px;
+            >span{
+                margin-left: 60px;
+            }
+            >*{
+                margin-top: 3%;
+            }
+        }
+    }
+    >.body{
+        // background-color: rgb(161, 87, 87);
+        position: relative;
+        height: 90%;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px 6%;
+    }
+}
+.menuList{
+    color: @halfColor;
+    user-select: none;
+    >div{//groupBox
+        .child_deep1{
+            transition: 0.3s;
+            overflow: hidden;
+            .child_deep2{
+                p{
+                    padding-left: 30px;
+                    >span{
+                        display: block;
+                    }
+                }
+            }
+        }
+        p{
+            cursor: pointer;
+            height: 30px;
+            line-height: 30px;
+            &:hover{
+                background: linear-gradient(to right,rgba(255,255,255,0) , @lightColor 10%  ,rgba(255,255,255,0) 90%);
+            }
+        }
+        .checked-p{
+            background: linear-gradient(to right,rgba(255,255,255,0) , @lightColor 10%  ,rgba(255,255,255,0) 90%);
+            color: @fontColor;
+        }
+    }
+}
+
+.rootBox{
+    position: absolute;
+    user-select: none;
+    width: 88%;
+    height: 92%;
+    box-sizing: border-box;
+    padding: 0 30px;
+    // background-color: rgb(49, 27, 27);
+    overflow-y: scroll;
+    color: @halfColor;
+    >.deep1_line{
+        box-sizing: border-box;
+        border-left: 1px dashed  @lightColor;
+        >.child_deep1{//第一层
+            // background-color: rgba(255, 255, 255, 0.3);
+            margin-left: -6px;
+            font-size: 14px;
+            transition: 0.3s;
+            overflow: hidden;
+            >.deep2_line{
+                position: relative;
+                margin-left: 60px;
+                box-sizing: border-box;
+                border-left: 1px dashed  @lightColor;
+                &::before{
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    left: -56px;
+                    width: 56px;
+                    // height: 60px;
+                    border-top: 1px dashed @lightColor;
+                }
+                >.child_deep2{
+                    // background-color: rgba(89, 184, 118, 0.3);
+                    margin-left: -6px;
+                    font-size: 13px;
+                    transition: 0.3s;
+                    overflow: hidden;
+                    >.deep3_line{
+                        position: relative;
+                        margin-left: 60px;
+                        box-sizing: border-box;
+                        border-left: 1px dashed  @lightColor;
+                        &::before{
+                            content: '';
+                            display: inline-block;
+                            position: absolute;
+                            left: -56px;
+                            width: 56px;
+                            // height: 60px;
+                            border-top: 1px dashed @lightColor;
+                        }
+                        >.child_deep3{
+                            font-size: 12px;
+                            // background-color: rgba(226, 81, 81, 0.3);
+                            margin-left: -6px;
+                            transition: 0.3s;
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+        }
+        p{
+            height: 30px;
+            line-height: 30px;
+            &:hover{
+                background: linear-gradient(to right,rgba(255,255,255,0) , @lightColor 10%  ,rgba(255,255,255,0) 90%);
+            }
+        }
+        span{
+            margin-left: 8px;
+        }
+        .switcher{
+            background-color: @bgColor;
+        }
+        .basic{
+            background-color: @bgColor;
+        }
+        i{
+            z-index: 999;
+            &:hover{
+                color: @fontColor!important;
+            }
+        }
+        .checked{
+            color: @fontColor;
+        }
+    }
+    >p{
+        text-align: left;
+        color: @lightColor;
+        height: 46px;
+        line-height: 46px;
+    }
+}
+
+/* IE 浏览器 */
+@hideColor:rgba(255, 255, 255, 0);
+@lightColor:rgba(89, 252, 255, 0.3);
+.addScroll{
+    resize: none;
+    scrollbar-arrow-color: @fontColor;/*三角箭头的颜色*/
+    scrollbar-face-color: @bgColor;/*滚动条滑块按钮的颜色*/
+    scrollbar-highlight-color: @bgColor;/*滚动条整体颜色*/
+    scrollbar-shadow-color: @bgColor;/*滚动条阴影*/
+    scrollbar-track-color: @bgColor;/*滚动条轨道颜色*/
+    scrollbar-3dlight-color:@bgColor;/*滚动条3d亮色阴影边框的外观颜色——左边和上边的阴影色*/
+    scrollbar-darkshadow-color: @bgColor;/*滚动条3d暗色阴影边框的外观颜色——右边和下边的阴影色*/
+    scrollbar-base-color: @bgColor;/*滚动条基准颜色*/
+}
+/* chrome & safari 浏览器 */
+.addScroll{
+  resize: none;
+  &::-webkit-scrollbar{/*滚动条整体部分,必须要设置*/
+    width: 6px;
+    height: 10px;
+  }
+  &::-webkit-scrollbar-track{/*滚动条的轨道*/
+    background-color: @hideColor;
+  }
+  &::-webkit-scrollbar-thumb{/*滚动条的滑块按钮*/
+    border-radius: 10;
+    background-color: @lightColor;
+  }
+  &::-webkit-scrollbar-button{/*滚动条的上下两端的按钮*/
+    height: 0;
+    display: none;
+  }
+}

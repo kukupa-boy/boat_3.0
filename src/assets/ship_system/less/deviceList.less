@@ -1,0 +1,269 @@
+
+@fontColor:rgb(89,252,255);
+@bgColor:rgb(5, 33, 69);
+@lightColor:rgba(89, 252, 255, 0.3);
+.deviceManageBox {
+    position: absolute;
+    background-color: @bgColor;
+    background-image: url(../../public/img/border.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 78%;
+    width: 82%;
+    top: 11%;
+    right: 4%;
+    box-sizing: border-box;
+    overflow: hidden;
+    >.dmb-left,.dmb-right{
+        height: 100%;
+        position: absolute;
+        box-sizing: border-box;
+    }
+    >.dmb-left{
+        left: 0;
+        width: 78.9%;
+        border: 4px solid rgba(255, 255, 255, 0);
+    }
+    >.dmb-right{
+        right: 0;
+        width: 21.1%;
+    }
+}
+
+
+.dmb-right{
+    >div{
+        position: relative;
+        width: 100%;
+        height: 50%;
+        box-sizing: border-box;
+        >p{
+            color: @fontColor;
+            padding-top: 24px;
+            box-sizing: border-box;
+            border-left: 16px solid rgba(255, 255, 255, 0);
+            border-right: 16px solid rgba(255, 255, 255, 0);
+            border-bottom: 1px dashed @lightColor;           >span{
+                margin-left: 16px;
+            }
+        }
+    }
+}
+
+.thehead{
+    height: 60px;
+    position: relative;
+        line-height: 60px;
+    >div{
+        display: inline-block;
+    }
+    >.th-search{
+        margin-left: 30px;
+        width: 320px;
+    }
+    >.th-add{
+        position: absolute;
+        right: 30px;
+    }
+}
+
+.thebody{
+    width: 100%;
+    button{
+        margin: 0;
+    }
+    .oprate{
+        i{
+            display: inline-block;
+            border-radius: 10px;
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            // border: 2px solid #ccc;
+            font-size: 18px;
+            text-align: center;
+            color: @fontColor;
+            line-height: 20px;
+            transition: 0.3s;
+        }
+        .icon-48{
+            font-size: 14px;
+            &:hover{
+                color: rgb(107, 173, 91);
+            }
+        }
+        .icon--2{
+            font-size: 16px;
+            &:hover{
+                color: rgb(199, 71, 71);
+            }
+        }
+    }
+    .imageCan{
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        height:30px;
+        >img{
+            display: inline-block;
+            height: 30px;
+            margin: 0 4px;
+        }
+    }
+    .fa-qrcode{
+        font-size: 20px;
+        color: @fontColor;
+    }
+    .fa-picture-o{
+        font-size: 18px;
+        color: @fontColor;
+    }
+}
+
+
+.thefoot{
+    position: absolute;
+    bottom: 16px;
+    right: 60px;
+}
+
+.oprate{
+    >span{
+        display: inline-block;
+        border-radius: 10px;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        border: 2px solid #ccc;
+        font-size: 18px;
+        text-align: center;
+        color: #aaa;
+        line-height: 20px;
+    }
+    >.fa-times{
+        border: 2px solid orange;
+        color: orange;
+    }
+}
+
+.slotBody{
+    >div{
+        margin: 16px 0;
+        font-size: 0;
+        box-sizing: border-box;
+        padding: 0 5%;
+        >*{
+            font-size: 14px;
+            vertical-align: bottom;
+        }
+        >span{
+            display: inline-block;
+            width: 24%;
+            color: @fontColor;
+        }
+        >div{
+            display: inline-block;
+            width: 62%;
+            margin-left: 4%;
+        }
+    }
+    >.sb-textarea{
+        >*{
+            vertical-align: top;
+        }
+    }
+
+    >.sb-describe{
+        textarea{
+            border-radius: 16px;
+        }
+    }
+}
+
+
+.bigImgWallBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 999;
+    text-align: center;
+    background-color: rgba(5, 33, 69, 0.6);
+    >.bigImgWall{
+        position: relative;
+        box-sizing: border-box;
+        padding: 60px;
+        display: inline-block;
+        top: 10%;
+        height: 80%;
+        >i{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: @fontColor;
+            &:hover{
+                color: rgb(255, 80, 80);
+            }
+        }
+        >img{
+            height: 100%;
+        }
+    }
+}
+
+
+
+// 查看详情和修改
+
+.modifyDetailBox{
+    box-sizing: border-box;
+    padding: 0 16px;
+    >.body{
+        border-bottom: 1px dashed @lightColor;
+        padding: 12px 0;
+        color:@fontColor;
+        >div:not(.deviceimg){
+            text-align: left;
+            // height: 30px;
+            line-height: 26px;
+            font-size: 0;
+            >*{
+                display: inline-block;
+                font-size: 14px;
+                margin-top: 4px;
+                margin-left: 4%;
+                vertical-align: top;
+            }
+            >span{
+                width: 28%;
+                text-align:right;
+            }
+            >div{
+                width: 60%;
+            }
+        }
+        >.deviceimg{
+            text-align: center;
+            >*{
+                display: inline-block;
+                vertical-align: middle;
+            }
+            >p{
+                >img{
+                    height: 60px;
+                    margin-left: 16px;
+                }
+            }
+            
+        }
+    }
+    >.foot{
+        >div{
+            display: inline-block;
+            margin: 24px 48px 0 48px;
+        }
+    }
+}

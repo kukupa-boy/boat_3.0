@@ -1,0 +1,1083 @@
+// 一下变量作用于功能按键的样式
+@fontC:rgb(0, 255, 255);//字体颜色
+@fontCH:rgb(5, 33, 69);//鼠标移入颜色
+@fontCH_del:rgb(252, 141, 141);//特殊颜色 删除
+@fontCC:rgb(255, 255, 255);//选中后字体颜色
+@bgC:rgba(255, 255, 255, 0.6);//背景大盒子颜色
+@boxbgC:rgb(5, 33, 69);//盒子颜色
+@boxbgCH:rgb(0, 255, 255);//鼠标移入后盒子背景颜色
+
+@leftLineC:rgb(108, 149, 224);
+
+@opa0:rgba(255, 255, 255, 0);
+
+.selectNone{
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+@fontColor:rgb(0, 255, 255);
+@bgColor:rgb(5, 33, 69);
+@lightColor:rgba(0, 255, 255,0.5);
+// 功能按钮
+.toolBtnBox{
+    &:extend(.selectNone);
+    // background-color: pink;
+    // user-select: none;
+    position: absolute;
+    z-index: 800;
+    top: 60px;
+    left: 240px;
+    max-height: 100%;
+    // background-color: #f00;
+    // height: 60px;
+    >div{
+        margin-top: 20px;
+        border-left: 1px dashed rgba(255, 255, 255, 0);
+        border-radius:18px;
+        // background-color: rgb(211, 128, 211);
+        display: inline-block;
+        vertical-align: top;
+    }
+    .openMeasure,
+    .openDraw,
+    .openRoute,
+    .openWeather,
+    .openTool{
+        border-color: @fontColor;
+        >.head{
+            border-style: dashed dotted double solid;
+            border-color: @fontColor;
+            >p{
+                border-color: @fontColor;
+                >span{
+                    background-color: @fontColor;
+                    color: @bgColor;
+                }
+            }
+        }
+    }
+    .openMeasure{
+        height: 145px;
+    }
+    .openDraw{
+        height: 145px;
+    }
+    .openRoute{
+        height: 180px;
+    }
+    .openWeather{
+        height: 290px;
+    }
+    .openTool{
+        height: 110px;
+    }
+}
+.toolPublic{
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: @fontColor;
+    background-color:@bgColor;
+    box-sizing: border-box;
+    border-spacing: 5px;
+    border-radius: 50px;
+    >p{
+        width: 32px;
+        height: 32px;
+        border-style: double double dashed dotted ;
+        border-width: 1px;
+        border-color:@opa0;
+        background-color: @bgColor;
+        color:@fontColor;
+        margin: 1px;
+        border-radius: 50px;
+        font-size: 0;
+        box-sizing: border-box;
+        >span{
+            display: inline-block;
+            box-sizing: border-box;
+            font-size: 20px;
+            width: 28px;
+            height: 28px;
+            margin: 1px;
+            border-style: dashed dotted solid double;
+            border-width: 1px;
+            border-color:@opa0;
+            line-height: 26px;
+            text-align: center;
+            border-radius: 50px;
+        }
+    }
+}
+// 测距按钮
+.map-measure{
+    position: relative;
+    text-align: center;
+    transition: 0.3s;
+    height: 36px;
+    width: 36px;
+    transition: 0.3s;
+    overflow: hidden;
+    >.head{
+        .toolPublic;
+    }
+    >.body{
+        >p{
+            position: relative;
+            line-height: 30px;
+            border-radius: 50px;
+            background-color: @bgColor;
+            color: @fontColor;
+            // margin: 6px auto;
+            margin: 6px 0 0 3px;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            transition: 0.3s;
+            >span{
+                cursor: pointer;
+            }
+            &:hover{
+                background-color: @fontColor;
+                color: @bgColor;
+                >i{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+            >i{
+                &:extend(.selectNone);
+                // user-select: none;
+                visibility: hidden;
+                opacity: 0;
+                font-style: normal;
+                transition: 0.3s;
+                position: absolute;
+                width: 40px;
+                margin-left: 12px;
+                margin-top: 6px;
+                border-radius: 30px;
+                height: 18px;
+                line-height: 18px;
+                font-size: 12px;
+                color: @fontColor;
+                border-bottom:1px solid @fontColor;
+            }
+        }
+        .checked{
+            background-color: @fontColor;
+            color: @bgColor;
+        }
+    }
+    &:hover{
+        width: 80px;
+    }
+}
+// 绘制按钮
+.map-draw{
+    position: relative;
+    text-align: center;
+    transition: 0.3s;
+    height: 36px;
+    width: 36px;
+    transition: 0.3s;
+    overflow: hidden;
+    >.head{
+        .toolPublic;
+    }
+    >.body{
+        >p{
+            position: relative;
+            line-height: 30px;
+            border-radius: 50px;
+            background-color: @bgColor;
+            color: @fontColor;
+            // margin: 6px auto;
+            margin: 6px 0 0 3px;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            transition: 0.3s;
+            >span{
+                cursor: pointer;
+            }
+            &:hover{
+                background-color: @fontColor;
+                color: @bgColor;
+                >i{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+            >i{
+                // user-select: none;
+                &:extend(.selectNone);
+                visibility: hidden;
+                opacity: 0;
+                font-style: normal;
+                transition: 0.3s;
+                position: absolute;
+                width: 40px;
+                margin-left: 12px;
+                margin-top: 6px;
+                border-radius: 30px;
+                height: 18px;
+                line-height: 18px;
+                font-size: 12px;
+                color: @fontColor;
+                border-bottom:1px solid @fontColor;
+            }
+        }
+        .checked{
+            background-color: @fontColor;
+            color: @bgColor;
+        }
+    }
+    &:hover{
+        width: 80px;
+    }
+}
+
+// 绘制按钮
+.map-route{
+    position: relative;
+    text-align: center;
+    transition: 0.3s;
+    height: 36px;
+    width: 36px;
+    transition: 0.3s;
+    overflow: hidden;
+    >.head{
+        .toolPublic;
+    }
+    >.body{
+        >p{
+            position: relative;
+            line-height: 30px;
+            border-radius: 50px;
+            background-color: @bgColor;
+            color: @fontColor;
+            // margin: 6px auto;
+            margin: 6px 0 0 3px;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            transition: 0.3s;
+            >span{
+                cursor: pointer;
+            }
+            &:hover{
+                background-color: @fontColor;
+                color: @bgColor;
+                >i{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+            >i{
+                // user-select: none;
+                &:extend(.selectNone);
+                visibility: hidden;
+                opacity: 0;
+                font-style: normal;
+                transition: 0.3s;
+                position: absolute;
+                width: 40px;
+                margin-left: 12px;
+                margin-top: 6px;
+                border-radius: 30px;
+                height: 18px;
+                line-height: 18px;
+                font-size: 12px;
+                color: @fontColor;
+                border-bottom:1px solid @fontColor;
+            }
+        }
+        .checked{
+            background-color: @fontColor;
+            color: @bgColor;
+        }
+    }
+    &:hover{
+        width: 80px;
+    }
+}
+@placeholderColor:rgba(0, 255, 255, 0.6);
+.saveAreaBox,
+.saveRouteBox{
+    background-color: #f00;
+    position: absolute;
+    top: 120px;
+    left: 300px;
+    z-index: 800;
+    .saveArea{
+        padding:0 24px;
+        margin: 15px 0;
+        height: 30px;
+        line-height: 30px;
+        font-size: 0;
+        color: @fontColor;
+        >*{
+            font-size: 14px;
+            display: inline-block;
+        }
+        >div{
+            // background-color: red;
+            position: relative;
+            height: 60%;
+            width: 260px;
+            border-bottom: 1px solid @fontColor;
+            >input{
+                color: @fontColor;
+                display: block;
+                box-sizing: border-box;
+                height: 100%;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0);
+                border: 0;
+                &:focus{
+                    outline: none;
+                    border: 1px solid @opa0;
+                }
+                &::-webkit-input-placeholder{
+                    color: @placeholderColor;
+                    padding-left: 4px;
+                }
+                &::-moz-placeholder{   /* Mozilla Firefox 19+ */
+                    color: @placeholderColor;
+                    padding-left: 4px;
+                }
+                &:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+                    color: @placeholderColor;
+                    padding-left: 4px;
+                }
+                &:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+                    color: @placeholderColor;
+                    padding-left: 4px;
+                }
+            }
+        }
+        
+        >.save,.cancel{
+            height: 22px;
+            cursor: pointer;
+            line-height: 22px;
+            padding: 0 8px;
+            transition: 0.3s;
+            &:hover{
+                color: @bgColor;
+                border-color: @bgColor;
+                background-color: @fontColor;
+            }
+        }
+        >.save{
+            border: 1px solid @fontColor;
+            margin-left: 24px;
+        }
+        >.cancel{
+            border: 1px solid @fontColor;
+            opacity: 0.6;
+            margin-left: 16px;
+        }
+    }
+}
+
+
+// 气象 map-weather
+// 绘制按钮
+.map-weather{
+    position: relative;
+    text-align: center;
+    transition: 0.3s;
+    height: 36px;
+    width: 36px;
+    transition: 0.3s;
+    overflow: hidden;
+    >.head{
+        .toolPublic;
+    }
+    >.body{
+        >p{
+            position: relative;
+            line-height: 30px;
+            border-radius: 50px;
+            background-color: @bgColor;
+            color: @fontColor;
+            // margin: 6px auto;
+            margin: 6px 0 0 3px;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            transition: 0.3s;
+            >span{
+                cursor: pointer;
+            }
+            &:hover{
+                background-color: @fontColor;
+                color: @bgColor;
+                >i{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+            >i{
+                // user-select: none;
+                &:extend(.selectNone);
+                visibility: hidden;
+                opacity: 0;
+                font-style: normal;
+                transition: 0.3s;
+                position: absolute;
+                width: 40px;
+                margin-left: 12px;
+                margin-top: 6px;
+                border-radius: 30px;
+                height: 18px;
+                line-height: 18px;
+                font-size: 12px;
+                color: @fontColor;
+                border-bottom:1px solid @fontColor;
+            }
+        }
+        .checked{
+            background-color: @fontColor;
+            color: @bgColor;
+        }
+    }
+    &:hover{
+        width: 80px;
+    }
+}
+
+// 辅助工具
+.map-tool{
+    position: relative;
+    text-align: center;
+    transition: 0.3s;
+    height: 36px;
+    width: 36px;
+    transition: 0.3s;
+    overflow: hidden;
+    >.head{
+        .toolPublic;
+    }
+    >.body{
+        >p{
+            position: relative;
+            line-height: 30px;
+            border-radius: 50px;
+            background-color: @bgColor;
+            color: @fontColor;
+            // margin: 6px auto;
+            margin: 6px 0 0 3px;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            transition: 0.3s;
+            >span{
+                cursor: pointer;
+            }
+            &:hover{
+                background-color: @fontColor;
+                color: @bgColor;
+                >i{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+            >i{
+                // user-select: none;
+                &:extend(.selectNone);
+                visibility: hidden;
+                opacity: 0;
+                font-style: normal;
+                transition: 0.3s;
+                position: absolute;
+                width: 40px;
+                margin-left: 12px;
+                margin-top: 6px;
+                border-radius: 30px;
+                height: 18px;
+                line-height: 18px;
+                font-size: 12px;
+                color: @fontColor;
+                border-bottom:1px solid @fontColor;
+            }
+        }
+        .checked{
+            background-color: @fontColor;
+            color: @bgColor;
+        }
+    }
+    &:hover{
+        width: 80px;
+    }
+}
+
+.dropDetail{
+    z-index: 999;
+    position: absolute;
+    top: 300px;
+    left: 300px;
+    .st-box{
+        padding: 12px;
+        box-sizing: border-box;
+        >div:not(.userHead){
+            font-size: 0;
+            >*{
+                display: inline-block;
+                font-size: 14px;
+                color: @fontColor;
+            }
+            >span{
+                width: 80px;
+                text-align: right;
+            }
+            >p{
+                margin: 0 16px;
+                >span{
+                    cursor: pointer;
+                    margin: 0 6px;
+                    text-decoration: underline;
+                }
+            }
+        }
+        >.userHead{
+            height: 42px;
+            >p{
+                display: inline-block;
+                vertical-align: middle;
+            }
+            >.uh-photo{
+                margin-left: 30px;
+                width: 36px;
+                height: 36px;
+                overflow: hidden;
+                border-radius: 50%;
+                >img{
+                    width: 100%;
+                }
+            }
+            >.uh-info{
+                >span{
+                    color: @fontColor;
+                    font-size: 16px;
+                }
+            }
+        }
+        >span{
+            position: absolute;
+            font-size: 18px;
+            top: 6px;
+            right: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            &:hover{
+                color: rgb(228, 122, 122);
+            }
+        }
+    }
+}
+
+
+.shipTrackSearch{
+    position: absolute;
+    z-index: 800;
+    left: 120px;
+    top: 100px;
+    text-align: left;
+    .sts-title{
+        user-select: none;
+        text-align: center;
+        >span{
+            display: inline-block;
+            border: 1px solid rgb(4, 238, 255);
+            padding: 2px 12px;
+            color: rgb(4, 238, 255);
+        }
+    }
+    .sts-box{
+        &:extend(.selectNone);
+        padding: 20px;
+        width: 300px;
+        >.stsb-time{
+            color: @fontColor;
+            font-size: 0;
+            >*{
+                font-size: 14px;
+                display: inline-block;
+            }
+            >span{
+                width: 80px;
+            }
+            >div{
+                margin-top: 16px;
+                width: 220px;
+                >div{
+                    width: 100%;
+                }
+            }
+        }
+        >.stsb-simple{
+            text-align: center;
+            margin-top: 24px;
+            >span{
+                padding: 2px 8px;
+                border: 1px solid @fontColor;
+                color: @fontColor;
+                margin: 0 24px;
+                cursor: pointer;
+                &:hover{
+                    background-color: @fontColor;
+                    color: @bgColor;
+                }
+            }
+        }
+        >.stsb-submit{
+            text-align: center;
+            margin-top: 36px;
+            >span{
+                padding: 4px 12px;
+                margin: 0 24px;
+                cursor: pointer;
+               
+            }
+            >.search{
+                border: 1px solid @fontColor;
+                color: @fontColor;
+                &:hover{
+                    background-color: @fontColor;
+                    color: @bgColor;
+                }
+            }
+            >.close{
+                border: 1px solid rgba(255, 255, 255, 0.6);
+                color: rgba(255, 255, 255, 0.6);
+                &:hover{
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}
+
+
+
+.ls{
+    position: absolute;
+    z-index: 800;
+    right: 360px;
+    top: 80px;
+}
+
+
+
+
+
+
+// 图源切换
+.changeMap{
+    &:extend(.selectNone);
+    z-index: 1000;
+    position: absolute;
+    bottom: 12px;
+    left: 20px;
+    width: 108px;
+    height: 58px;
+    transition: 0.3s;
+    // user-select: none;
+    >div{
+        position: absolute;
+        transition: 0.3s;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 74px;
+        height: 58px;
+        top: 0;
+        border: 2px solid @opa0;
+        &:nth-of-type(1){
+            right: 0;
+        }
+        &:nth-of-type(2){
+            right: 15px;
+        }
+        &:nth-of-type(3){
+            right: 30px;
+        }
+        >span{
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            height: 20px;
+            line-height: 20px;
+            background-color: rgba(0, 0, 0, 0.4);
+            bottom: 0;
+            color: #fff;
+        }
+    }
+    >.nowShow{
+        z-index: 999;
+        border-color:@fontC;
+    }
+    &:hover{
+        width: 246px;
+        >div{
+            &:nth-of-type(1){
+                right: 0;
+            }
+            &:nth-of-type(2){
+                right: 84px;
+            }
+            &:nth-of-type(3){
+                right: 168px;
+            }
+        }
+    }
+}
+
+
+
+@w-font-danger:#ff3e3e;
+@w-font-warning:#e59327;
+@w-font-oversee:#8abd29;
+// 监视信息面板
+.watchPanel{
+    &:extend(.selectNone);
+    position: absolute;
+    bottom: 10px;
+    left: 146px;
+    // user-select: none;
+    z-index: 999;
+    font-size: 0;
+    div{
+        margin: 0 10px;
+        vertical-align: middle;
+    }
+    .wp-numPanel,
+    .wp-infoPanel{
+        display: inline-block;
+        margin: 0 10px;
+        border-radius: 6px;
+        padding: 8px 0;
+        height:72px;
+        vertical-align: top;
+    }
+    .wp-numPanel{
+        >div{//wp-danger层级
+            height: 24px;
+            line-height: 24px;
+            font-size: 12px;
+            .wp-update{
+                color: @fontC;
+            }
+        }
+        >.wp-danger{
+            .wp-shipNum{
+                color: @w-font-danger;
+            }
+        }
+        >.wp-warning{
+            .wp-shipNum{
+                color: @w-font-warning;
+            }
+        }
+        >.wp-oversee{
+            .wp-shipNum{
+                color: @w-font-oversee;
+            }
+        }
+    }
+    .wp-infoPanel{
+
+        font-size: 12px;
+        >div{
+            height: 100%;
+            overflow-y: auto;
+            >.isEmpty{
+                line-height: 72px;
+                width: 260px;
+                text-align: center;
+                color: @fontC;
+            }
+            span{
+                color:rgb(226, 249, 255);
+            }
+            .a_mmsi {
+                margin: 0 2px;
+                cursor: pointer;
+                color: @fontC;
+                text-decoration: underline;
+                // 单船查询按钮按下的样式
+                &:active{
+                    color: #6bff91;
+                }
+            }
+        }
+    }
+}
+.enterBlink{
+    animation: blink 3s linear infinite;
+}
+@keyframes blink{
+    0%{
+        color:rgb(255, 255, 255);
+    }
+    5%{
+        color: red;
+    }
+    10%{
+        color:rgb(255, 255, 255);
+    }
+    15%{
+        color: red;
+    }
+    20%{
+        color:rgb(255, 255, 255);
+    }
+    25%{
+        color: red;
+    }
+    30%{
+        color:rgb(255, 255, 255);
+    }
+    100%{
+        color: rgb(255, 255, 255);
+    }
+}
+
+// 气象粒子效果的canvas
+.animationCan{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+// myCanvas
+#myCanvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 600;
+    opacity: 0.5;
+    display: none;
+}
+
+// 热图（温差图）
+#heatmap{
+    top: 0;
+    left: 0;
+    z-index: 600;
+    opacity: 0.7;
+    display: none;
+}
+
+// 船舶详情
+.dp-shipdetail{
+    >div{
+        color: @fontColor;
+        padding: 0 16px;
+        line-height: 24px;
+        >*{
+            vertical-align: top;
+        }
+        span{
+            display: inline-block;
+            width: 80px;
+            text-align: right;
+        }
+        >i{
+            font-style: normal;
+            display: inline-block;
+            max-width: 160px;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            margin-left: 24px;
+        }
+    }
+    >.dp-first{
+        margin-top: 16px;
+    }
+    >.dp-last{
+        text-align: center;
+        height: 36px;
+        line-height: 36px;
+        >*{
+            display: inline-block;
+            cursor: pointer;
+            margin: 0 24px;
+            vertical-align: middle;
+        }
+        >.dp-searchTrack{
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        >.dp-callShip{
+            line-height: normal;
+            padding: 2px 8px;
+            border: 1px solid @fontColor;
+            &:hover{
+                background-color: @fontColor;
+                color: @bgColor;
+            }
+        }
+    }
+
+}
+
+
+// 报警抖动弹框
+.alarmBox{
+    position: fixed;
+    width: 180px;
+    background-color: @bgColor;
+    padding: 4px;
+    right: 20px;
+    bottom: 80px;
+    z-index: 1009;
+    margin-left: 0;
+    box-shadow: 0px 0px 4px 2px @w-font-danger;
+    >.alarm{
+        border: 1px solid @w-font-danger;
+        // border: 1px solid @fontColor;
+        box-sizing: border-box;
+        padding: 8px 12px;
+        >.head{
+            text-align: center;
+            color: @w-font-danger;
+            font-size: 16px;
+            >*{
+                // display: block;
+                margin: 8px;
+            }
+            i{
+                font-size: 24px;
+            }
+        }
+        >.content{
+            text-indent: 2em;
+            color: @fontColor;
+            padding: 16px 0;
+        }
+        >.btnBox{
+            text-align: center;
+            color: @fontColor;
+            margin-top: 12px;
+            >*{
+                display: inline-block;
+                border: 1px solid @fontColor;
+                margin: 0 8px;
+                font-size: 12px;
+                cursor: pointer;
+                user-select: none;
+            }
+            >.sure{
+                padding: 0 8px;
+                &:hover{
+                    opacity: 0.9;
+                }
+            }
+            >.cancel{
+                // border: 1px solid rgba(0, 255, 255, 0.7);
+                // color: rgba(0, 255, 255, 0.7);
+                border: 1px solid rgba(255, 255, 255, 0.7);
+                color: rgba(255, 255, 255, 0.7);
+                padding: 0 4px;
+                span{
+                    display: inline-block;
+                    width: 16px;
+                    border-radius: 50%;
+                    margin-left: 4px;
+                    height: 16px;
+                    color: rgb(255, 255, 255);
+                    // background-color: rgba(97, 78, 78, 0.384);
+                }
+                &:hover{
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}
+.animationAlarm{
+    animation: shake 3s infinite linear;
+}
+@keyframes shake{
+    0%{
+        right: 20px;
+    }
+    2%{
+        right: 26px;
+    }
+    6%{
+        right: 14px;
+    }
+    10%{
+        right: 26px;
+    }
+    14%{
+        right: 14px;
+    }
+    18%{
+        right: 26px;
+    }
+    22%{
+        right: 14px;
+    }
+    26%{
+        right: 20px;
+        
+    }
+    100%{
+        right: 20px;
+    }
+}
+
+// 滚动条样式
+/* IE 浏览器 */
+@hideColor:rgba(255, 255, 255, 0);
+.scrollbar{
+    /*三角箭头的颜色*/
+    scrollbar-arrow-color: @hideColor;
+    /*滚动条滑块按钮的颜色*/
+    scrollbar-face-color: @hideColor;
+    /*滚动条整体颜色*/
+    scrollbar-highlight-color: @hideColor;
+    /*滚动条阴影*/
+    scrollbar-shadow-color: @hideColor;
+    /*滚动条轨道颜色*/
+    scrollbar-track-color: @hideColor;
+    /*滚动条3d亮色阴影边框的外观颜色——左边和上边的阴影色*/
+    scrollbar-3dlight-color:@hideColor;
+    /*滚动条3d暗色阴影边框的外观颜色——右边和下边的阴影色*/
+    scrollbar-darkshadow-color: @hideColor;
+    /*滚动条基准颜色*/
+    scrollbar-base-color: @hideColor;
+}
+
+/* chrome & safari 浏览器 */
+/*滚动条整体部分,必须要设置*/
+.scrollbar::-webkit-scrollbar{
+    width: 6px;
+    height: 10px;
+}
+/*滚动条的轨道*/
+.scrollbar::-webkit-scrollbar-track{
+    background-color: rgba(255, 255, 255, 0);
+}
+/*滚动条的滑块按钮*/
+.scrollbar::-webkit-scrollbar-thumb{
+    border-radius: 10;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+/*滚动条的上下两端的按钮*/
+.scrollbar::-webkit-scrollbar-button{
+    height: 0;
+    display: none;
+}
